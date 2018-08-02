@@ -2,7 +2,7 @@
 % Please edit documentation in R/LncFinder.R
 \name{make_frequencies}
 \alias{make_frequencies}
-\title{Make the frequencies file with your own dataset}
+\title{Make the frequencies file for new classifier construction}
 \usage{
 make_frequencies(cds.seq, mRNA.seq, lncRNA.seq, SS.features = FALSE,
   cds.format = "DNA", lnc.format = "DNA", check.cds = TRUE,
@@ -10,7 +10,7 @@ make_frequencies(cds.seq, mRNA.seq, lncRNA.seq, SS.features = FALSE,
 }
 \arguments{
 \item{cds.seq}{Coding sequences (mRNA without UTRs). Can be a FASTA file loaded
-by package "seqinr" (\code{\link[seqinr]{seqinr-package}}) or secondary structure
+by \code{\link[seqinr]{seqinr-package}} or secondary structure
 sequences (Dot-Bracket Notation) obtained form function \code{\link{run_RNAfold}}.
 CDs are used to calculate hexamer frequencies of nucleotide sequences,thus
 secondary structure is not needed. Parameter \code{cds.format} should be
@@ -23,7 +23,7 @@ mRNA sequences are used to calculate the frequencies of acgu-ACGU and a acguD
 (see details), thus, mRNA sequences are required only when \code{SS.features = TRUE}.}
 
 \item{lncRNA.seq}{Long non-coding RNA sequences. Can be a FASTA file loaded by
-package "seqinr" (\code{\link[seqinr]{seqinr-package}}) or secondary structure
+\code{\link[seqinr]{seqinr-package}} or secondary structure
 sequences (Dot-Bracket Notation) obtained from function \code{\link{run_RNAfold}}.
 If \code{SS.features = TRUE}, \code{lncRNA.seq} must be RNA sequences with
 secondary structure sequences and parameter \code{lnc.format} should be defined
@@ -57,23 +57,30 @@ Returns a list which consists the frequencies of protein-coding sequences
 and non-coding sequences.
 }
 \description{
-This function is used to calculate the frequencies of CDs and
-secondary structure sequences. This function is useful when users are trying
+This function is used to calculate the frequencies of lncRNAs, CDs, and
+secondary structure sequences. The frequencies file can be used to build the classifier
+using function \code{\link{extract_features}}. Functions \code{make_frequencies} and
+\code{extract_features} are useful when users are trying
 to build their own model.
+
+NOTE: Function \code{make_frequencies} makes the frequencies file
+for building the classifiers of LncFinder method. If users need to calculate Logarithm-Distance,
+Euclidean-Distance, and hexamer score, the frequencies file need to be computed using function
+\code{\link{make_referFreq}}.
 }
 \details{
-This funtion is used to make frequencies file. This file is needed
+This function is used to make frequencies file for LncFinder method. This file is needed
 when users are trying to build their own model.
 
 In order to achieve high accuracy, mRNA should not be regarded as CDs and assigned
 to parameter \code{cds.seq}. However, CDs of some species may be insufficient
-for calculating frequencies, and mRNAs can be regared as CDs with parameter
+for calculating frequencies, and mRNAs can be regarded as CDs with parameter
 \code{check.cds = TRUE}. In this case, hexamer frequencies will be calculated
 on ORF region.
 
 Considering that it is time consuming to obtain secondary structure sequences,
 users can only provide nucleotide sequences and build a model without secondary
-structure features (\code{SS.features = FALSE}). If users want to build a model
+structure features (\code{SS.features = } \code{FALSE}). If users want to build a model
 with secondary structure features, parameter \code{SS.features} should be set
 as \code{TRUE}. At the same time, the format of the sequences of \code{mRNA.seq}
 and \code{lnc.seq} should be secondary structure sequences (Dot-Bracket Notation).
@@ -92,7 +99,7 @@ Frequencies and acguD Frequencies.
 
 Hexamer Frequencies are calculated on the original nucleotide sequences by
 employing \emph{k}-mer scheme (\emph{k} = 6), and the sliding window will slide
-3nt each step.
+3 nt each step.
 
 For any secondary structure sequences (Dot-Bracket Notation), if one position
 is a dot, the corresponding nucleotide of the RNA sequence will be replaced
@@ -117,14 +124,14 @@ acgu-ACGU Sequence:\code{    \{     u, a, c, a, G, U, U, A, U, G   \}}
 }
 \section{References}{
 
-HAN Siyu, LIANG Yanchun and LI Ying*.
-LncFinder: Long Non-coding RNA Identification Tool Based on Features of
-Sequence Intrinsic Composion, Secondary Structure and EIIP Values. (2017)
-(\emph{Submitted})
+Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
+LncFinder: an integrated platform for long non-coding RNA identification utilizing
+sequence intrinsic composition, structural information, and physicochemical property.
+\emph{Briefings in Bioinformatics}, 2018, bby065.
 }
 
 \examples{
-### Only some brief examples:
+### Only for examples:
 data(demo_DNA.seq)
 Seqs <- demo_DNA.seq
 
@@ -135,9 +142,9 @@ SS.seq <- run_RNAfold(Seqs, RNAfold.path = RNAfold.path, parallel.cores = 2)
 
 ### Make frequencies file with secondary strucutre features,
 my_file_1 <- make_frequencies(cds.seq = SS.seq, mRNA.seq = SS.seq,
-                            lncRNA.seq = SS.seq, SS.features = TRUE,
-                            cds.format = "SS", lnc.format = "SS",
-                            check.cds = TRUE, ignore.illegal = FALSE)
+                              lncRNA.seq = SS.seq, SS.features = TRUE,
+                              cds.format = "SS", lnc.format = "SS",
+                              check.cds = TRUE, ignore.illegal = FALSE)
 }
 
 ### Make frequencies file without secondary strucutre features,
@@ -156,9 +163,10 @@ my_file_3 <- make_frequencies(cds.seq = SS.seq, lncRNA.seq = Seqs,
                               ignore.illegal = FALSE)
 }
 \seealso{
-\code{\link{run_RNAfold}}, \code{\link{build_model}},
-         \code{\link{extract_features}}.
+\code{\link{run_RNAfold}}, \code{\link{read_SS}},
+         \code{\link{build_model}}, \code{\link{extract_features}},
+         \code{\link{make_referFreq}}.
 }
 \author{
-Han Siyu
+HAN Siyu
 }

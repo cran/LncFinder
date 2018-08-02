@@ -7,8 +7,8 @@
 run_RNAfold(Sequences, RNAfold.path = "RNAfold", parallel.cores = 2)
 }
 \arguments{
-\item{Sequences}{A FASTA file loaded by function \code{\link{read.fasta}} of
-package "seqinr" (\code{\link[seqinr]{seqinr-package}}).}
+\item{Sequences}{A FASTA file loaded by function  \code{\link[seqinr]{read.fasta}} of
+\code{\link[seqinr]{seqinr-package}}.}
 
 \item{RNAfold.path}{String. Indicate the path of the program "RNAfold". By
 default is \code{"RNAfold"} for UNIX/Linux system. (See details.)}
@@ -47,6 +47,9 @@ such as:
 
 which means around 100 sequences are assigned to this node and the program is
 computing the 25th sequence. The length of this sequence is 695nt.
+
+If users have their own SS data, users can use function \code{\link{read_SS}} to load
+them, instead of obtaining from RNAfold.
 }
 \examples{
 \dontrun{
@@ -61,12 +64,15 @@ Seqs <- demo_DNA.seq
 
 ### Windows:
 RNAfold.path <- '"E:/Program Files/ViennaRNA/RNAfold.exe"'
-SS.seq_1 <- run_RNAfold(Seqs, RNAfold.path = RNAfold.path, parallel.cores = 2)
+SS.seq_1 <- run_RNAfold(Seqs[1:2], RNAfold.path = RNAfold.path, parallel.cores = 2)
 
 ### For UNIX/Linux, "RNAfold.path" can be just defined as "RNAfold" as default:
 SS.seq_2 <- run_RNAfold(Seqs, RNAfold.path = "RNAfold", parallel.cores = 2)
 }
 }
+\seealso{
+\code{\link{read_SS}}
+}
 \author{
-Han Siyu
+HAN Siyu
 }

@@ -11,19 +11,19 @@ build_model(lncRNA.seq, mRNA.seq, frequencies.file, SS.features = FALSE,
 }
 \arguments{
 \item{lncRNA.seq}{Long non-coding sequences. Can be a FASTA file loaded by
-package "seqinr" (\code{\link[seqinr]{seqinr-package}}) or secondary structure
+\code{\link[seqinr]{seqinr-package}} or secondary structure
 sequences file (Dot-Bracket Notation) obtained from function
 \code{\link{run_RNAfold}}. If \code{lncRNA.seq} is secondary structure
 sequences file, parameter \code{lncRNA.format} should be defined as \code{"SS"}.}
 
-\item{mRNA.seq}{mRNA sequences. FASTA file loaded by package "seqinr" or
+\item{mRNA.seq}{mRNA sequences. FASTA file loaded by \code{\link[seqinr]{read.fasta}} or
 secondary structure sequences (Dot-Bracket Notation) obtained from function
 \code{\link{run_RNAfold}}. If \code{mRNA.seq} is secondary structure sequences
 file, parameter \code{mRNA.format} should be defined as \code{"SS"}.}
 
 \item{frequencies.file}{String or a list obtained from function
 \code{\link{make_frequencies}}. Input species name \code{"human"},
-\code{"mouse"} or \code{"wheat"} to use prebuild frequencies files. Or assign
+\code{"mouse"} or \code{"wheat"} to use pre-build frequencies files. Or assign
 a users' own frequencies file (Please refer to function
 \code{\link{make_frequencies}} for more information).}
 
@@ -35,7 +35,7 @@ obtained from function \code{\link{run_RNAfold}} and parameter
 
 \item{lncRNA.format}{String. Define the format of \code{lncRNA.seq}. \code{"DNA"}
 for DNA sequences and \code{"SS"} for secondary structure sequences. Only when
-both \code{mRNA.format} and \code{lncRNA.format} are aet as \code{"SS"}, can
+both \code{mRNA.format} and \code{lncRNA.format} are set as \code{"SS"}, can
 the model with secondary structure features be built (\code{SS.features = TRUE}).}
 
 \item{mRNA.format}{String. Define the format of \code{mRNA.seq}. Can be
@@ -81,10 +81,10 @@ For the details of svm tuning, please refer to function \code{\link{svm_tune}}.
 }
 \section{References}{
 
-HAN Siyu, LIANG Yanchun and LI Ying*.
-LncFinder: Long Non-coding RNA Identification Tool Based on Features of
-Sequence Intrinsic Composion, Secondary Structure and EIIP Values. (2017)
-(\emph{Submitted})
+Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
+LncFinder: an integrated platform for long non-coding RNA identification utilizing
+sequence intrinsic composition, structural information, and physicochemical property.
+\emph{Briefings in Bioinformatics}, 2018, bby065.
 }
 
 \examples{
@@ -92,7 +92,7 @@ Sequence Intrinsic Composion, Secondary Structure and EIIP Values. (2017)
 data(demo_DNA.seq)
 Seqs <- demo_DNA.seq
 
-### Build the model with prebuild frequencies.file:
+### Build the model with pre-build frequencies.file:
 my_model <- build_model(lncRNA.seq = Seqs[1:5], mRNA.seq = Seqs[6:10],
                         frequencies.file = "human", SS.features = FALSE,
                         lncRNA.format = "DNA", mRNA.format = "DNA",
@@ -112,5 +112,5 @@ best parameters.
          \code{\link[e1071]{svm}}.
 }
 \author{
-Han Siyu
+HAN Siyu
 }

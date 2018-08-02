@@ -1,0 +1,16 @@
+citHeader("To cite LncFinder in publications, please use:")
+
+citEntry(entry="Article",
+         title = "LncFinder: An Integrated Platform for Long Non-Coding RNA Identification Utilizing Sequence Intrinsic Composition, Structural Information, and Physicochemical Property",
+         author = personList(as.person("Siyu Han"), as.person("Yanchun Liang"), as.person("Qin Ma"), as.person("Yangyi Xu"), as.person("Yu Zhang"), as.person("Wei Du"), as.person("Cankun Wang"), as.person("Ying Li")),
+         year = 2018,
+         journal = "Briefings in Bioinformatics",
+         pages = 1-19,
+         article_ID = "bby065",
+         doi = "10.1093/bib/bby065",
+         url = "http://dx.doi.org/10.1093/bib/bby065",
+         web_server = "http://bmbl.sdstate.edu/lncfinder/",
+         textVersion = "Han, S., Liang, Y., Ma, Q., Xu, Y., Zhang, Y., Du, W., Wang, C. & Li, Y. LncFinder: an integrated platform for long non-coding RNA identification utilizing sequence intrinsic composition, structural information, and physicochemical property, Briefings in Bioinformatics, 2018, bby065."
+         )
+
+citFooter(sprintf("The authors would be glad to hear how LncFinder is employed. You are kindly encouraged to notify %s about any work you publish.", meta$Maintainer))

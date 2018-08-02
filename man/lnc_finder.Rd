@@ -5,33 +5,31 @@
 \title{Long Non-coding RNA Identification}
 \usage{
 lnc_finder(Sequences, SS.features = FALSE, format = "DNA",
-  frequencies.file = "human", svm.model = "human", parallel.cores = 2)
+  frequencies.file = "human", svm.model = "human",
+  parallel.cores = 2)
 }
 \arguments{
-\item{Sequences}{Unevaluated sequences. Can be a FASTA file loaded by package
-"seqinr" (\code{\link[seqinr]{seqinr-package}}) or secondary structure sequences
+\item{Sequences}{Unevaluated sequences. Can be a FASTA file loaded by
+\code{\link[seqinr]{seqinr-package}} or secondary structure sequences
 (Dot-Bracket Notation) obtained from function \code{\link{run_RNAfold}}. If
 \code{Sequences} is secondary structure sequences file, parameter \code{format}
 should be defined as \code{"SS"}.}
 
 \item{SS.features}{Logical. If \code{SS.features = TRUE}, secondary structure
-features will be used. In this case, \code{Sequences} should be secondary
-structure sequences (Dot-Bracket Notation) obtained from function
-\code{\link{run_RNAfold}} and parameter \code{format} should be set as \code{"SS"}.}
+features will be used.}
 
 \item{format}{String. Define the format of the \code{Sequences}. Can be
 \code{"DNA"} or \code{"SS"}. \code{"DNA"} for DNA sequences and \code{"SS"}
-for secondary structure sequences. This parameter must be set as \code{"SS"}
-when \code{SS.features = TURE}.}
+for secondary structure sequences.}
 
 \item{frequencies.file}{String or a list obtained from function
 \code{\link{make_frequencies}}. Input species name \code{"human"}, \code{"mouse"}
-or \code{"wheat"} to use prebuild frequencies files. Or assign a users' own
+or \code{"wheat"} to use pre-build frequencies files. Or assign a users' own
 frequencies file (See function \code{\link{make_frequencies}}).}
 
-\item{svm.model}{String or a svm model obtained from funtion \code{\link{build_model}}
+\item{svm.model}{String or a svm model obtained from function \code{\link{build_model}}
 or \code{\link{svm_tune}}. Input species name \code{"human"}, \code{"mouse"}
-or \code{"wheat"} to use prebuild models. Or assign a users' own model (See
+or \code{"wheat"} to use pre-build models. Or assign a users' own model (See
 function \code{\link{build_model}}).}
 
 \item{parallel.cores}{Integer. The number of cores for parallel computation.
@@ -69,13 +67,14 @@ For the details of the features, please refer to function
 }
 \section{References}{
 
-HAN Siyu, LIANG Yanchun and LI Ying*.
-LncFinder: Long Non-coding RNA Identification Tool Based on Features of
-Sequence Intrinsic Composion, Secondary Structure and EIIP Values. (2017)
-(\emph{Submitted})
+Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
+LncFinder: an integrated platform for long non-coding RNA identification utilizing
+sequence intrinsic composition, structural information, and physicochemical property.
+\emph{Briefings in Bioinformatics}, 2018, bby065.
 }
 
 \examples{
+\dontrun{
 data(demo_DNA.seq)
 Seqs <- demo_DNA.seq
 
@@ -85,7 +84,6 @@ result_1 <- lnc_finder(OneSeq, SS.features = FALSE, format = "DNA",
                        frequencies.file = "human", svm.model = "human",
                        parallel.cores = 2)
 
-\dontrun{
 ### Or several sequences:
 data(demo_SS.seq)
 Seqs <- demo_SS.seq
@@ -109,8 +107,8 @@ result_2 <- lnc_finder(SS.seq, SS.features = TRUE, format = "SS",
 }
 \seealso{
 \code{\link{build_model}}, \code{\link{make_frequencies}},
-         \code{\link{extract_features}}, \code{\link{run_RNAfold}}.
+         \code{\link{extract_features}}, \code{\link{run_RNAfold}}, \code{\link{read_SS}}.
 }
 \author{
-Han Siyu
+HAN Siyu
 }

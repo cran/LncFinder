@@ -2,19 +2,19 @@
 % Please edit documentation in R/LncFinder.R
 \name{extract_features}
 \alias{extract_features}
-\title{Extract the Features.}
+\title{Extract the Features}
 \usage{
-extract_features(Sequences, Label = NULL, SS.features = FALSE,
+extract_features(Sequences, label = NULL, SS.features = FALSE,
   format = "DNA", frequencies.file = "human", parallel.cores = 2)
 }
 \arguments{
 \item{Sequences}{mRNA sequences or long non-coding sequences. Can be a FASTA
-file loaded by package "seqinr" (\code{\link[seqinr]{seqinr-package}}) or
+file loaded by \code{\link[seqinr]{seqinr-package}} or
 secondary structure sequences (Dot-Bracket Notation) obtained from function
 \code{\link{run_RNAfold}}. If \code{Sequences} are secondary structure
 sequences file, parameter \code{format} should be defined as \code{"SS"}.}
 
-\item{Label}{Optional. String. Indicate the label of the sequences such as
+\item{label}{Optional. String. Indicate the label of the sequences such as
 "NonCoding", "Coding".}
 
 \item{SS.features}{Logical. If \code{SS.features = TRUE}, secondary structure
@@ -29,7 +29,7 @@ structure sequences. This parameter must be set as \code{"SS"} when
 
 \item{frequencies.file}{String or a list obtained from function
 \code{\link{make_frequencies}}. Input species name \code{"human"}, \code{"mouse"}
-or \code{"wheat"} to use prebuild frequencies files. Or assign a users' own
+or \code{"wheat"} to use pre-build frequencies files. Or assign a users' own
 frequencies file (See function \code{\link{make_frequencies}}).}
 
 \item{parallel.cores}{Integer. The number of cores for parallel computation.
@@ -37,8 +37,8 @@ By default the number of cores is \code{2}. Users can set as \code{-1} to run
 this function with all cores.}
 }
 \value{
-Returns a data.frame. 11 features when \code{SS.features = FALSE} and
-19 features when \code{SS.features = TRUE}.
+Returns a data.frame. 11 features when \code{SS.features} is \code{FALSE},
+and 19 features when \code{SS.features} is \code{TRUE}.
 }
 \description{
 This function can construct the dataset. This function is only used
@@ -62,7 +62,7 @@ when the species of unevaluated sequences is identical to the species of the
 sequences that used to build the model.
 
 However, if users are trying to predict sequences with the model trained on
-other species, \code{SS.features = TRUE} may lead to low accuracy.
+other species, \code{SS.features} as \code{TRUE} may lead to low accuracy.
 }
 \section{Features}{
 
@@ -80,7 +80,7 @@ other species, \code{SS.features = TRUE} may lead to low accuracy.
 
 2. Features based on EIIP (electron-ion interaction pseudopotential) value:
 
-   Signal as 1/3 position (\code{Signal.Peak});
+   Signal at 1/3 position (\code{Signal.Peak});
 
    Signal to noise ratio (\code{SNR});
 
@@ -113,18 +113,19 @@ other species, \code{SS.features = TRUE} may lead to low accuracy.
 
 \section{References}{
 
-HAN Siyu, LIANG Yanchun and LI Ying*.
-LncFinder: Long Non-coding RNA Identification Tool Based on Features of
-Sequence Intrinsic Composion, Secondary Structure and EIIP Values. (2017)
-(\emph{Submitted})
+Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
+LncFinder: an integrated platform for long non-coding RNA identification utilizing
+sequence intrinsic composition, structural information, and physicochemical property.
+\emph{Briefings in Bioinformatics}, 2018, bby065.
 }
 
 \examples{
+\dontrun{
 data(demo_DNA.seq)
 Seqs <- demo_DNA.seq
 
-### Extract features with prebuild frequencies.file:
-my_features <- extract_features(Seqs, Label = "Class.of.the.Sequences",
+### Extract features with pre-build frequencies.file:
+my_features <- extract_features(Seqs, label = "Class.of.the.Sequences",
                                 SS.features = FALSE, format = "DNA",
                                 frequencies.file = "mouse",
                                 parallel.cores = 2)
@@ -132,10 +133,11 @@ my_features <- extract_features(Seqs, Label = "Class.of.the.Sequences",
 ### Use your own frequencies file by assign frequencies list to parameter
 ### "frequencies.file".
 }
+}
 \seealso{
 \code{\link{svm_tune}}, \code{\link{build_model}},
-         \code{\link{make_frequencies}}, \code{\link{run_RNAfold}}.
+         \code{\link{make_frequencies}}, \code{\link{run_RNAfold}}, \code{\link{read_SS}}.
 }
 \author{
-Han Siyu
+HAN Siyu
 }
