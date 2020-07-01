@@ -4,8 +4,12 @@
 \alias{compute_EIIP}
 \title{Extract the EIIP-derived features}
 \usage{
-compute_EIIP(Sequences, label = NULL, spectrum.percent = 0.1,
-  quantile.probs = seq(0, 1, 0.25))
+compute_EIIP(
+  Sequences,
+  label = NULL,
+  spectrum.percent = 0.1,
+  quantile.probs = seq(0, 1, 0.25)
+)
 }
 \arguments{
 \item{Sequences}{A FASTA file loaded by function  \code{\link[seqinr]{read.fasta}} of
@@ -42,7 +46,11 @@ power spectrum, i.e. \code{quantile.prob} \code{= seq(0, 1, 0.25)} and \code{spe
 Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 LncFinder: an integrated platform for long non-coding RNA identification utilizing
 sequence intrinsic composition, structural information, and physicochemical property.
-\emph{Briefings in Bioinformatics}, 2018, bby065.
+\emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
+
+Lalović, Dragutin, and Veljko Veljković.
+The global average DNA base composition of coding regions may be determined by the electron-ion interaction potential.
+\emph{Biosystems}, 1990, 23(4):311-316.
 
 Achuthsankar S Nair & Sivarama Pillai Sreenadhan.
 A coding measure scheme employing electron-ion interaction pseudopotential (EIIP).

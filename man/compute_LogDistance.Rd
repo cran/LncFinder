@@ -4,9 +4,17 @@
 \alias{compute_LogDistance}
 \title{Compute Logarithm Distance}
 \usage{
-compute_LogDistance(Sequences, label = NULL, referFreq, k = 6,
-  step = 1, alphabet = c("a", "c", "g", "t"), on.ORF = FALSE,
-  auto.full = FALSE, parallel.cores = 2)
+compute_LogDistance(
+  Sequences,
+  label = NULL,
+  referFreq,
+  k = 6,
+  step = 1,
+  alphabet = c("a", "c", "g", "t"),
+  on.ORF = FALSE,
+  auto.full = FALSE,
+  parallel.cores = 2
+)
 }
 \arguments{
 \item{Sequences}{A FASTA file loaded by function  \code{\link[seqinr]{read.fasta}} of
@@ -60,7 +68,7 @@ can be customized to maximize its availability.
 Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 LncFinder: an integrated platform for long non-coding RNA identification utilizing
 sequence intrinsic composition, structural information, and physicochemical property.
-\emph{Briefings in Bioinformatics}, 2018, bby065.
+\emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 }
 
 \examples{

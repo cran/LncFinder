@@ -3,7 +3,8 @@
 \name{demo_dataset}
 \alias{demo_dataset}
 \title{A demo of dataset}
-\format{A data frame with 40 rows and 20 variables:
+\format{
+A data frame with 40 rows and 20 variables:
 \describe{
   \item{Label}{the class of the sequences}
   \item{ORF.Max.Len}{the length of the longest ORF}
@@ -25,7 +26,8 @@
   \item{SS.Dist.Ratio}{Distance-Ratio.acgu-ACGU}
   \item{MFE}{Minimum free energy}
   \item{UP.PCT}{Percentage of Unpair-Pair}
-}}
+}
+}
 \source{
 Sequences are selected from GENCODE.
 }

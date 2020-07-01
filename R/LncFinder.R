@@ -594,7 +594,7 @@ secondary_seq <- function(OneSeq, info, RNAfold.path){
 #' Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 #' LncFinder: an integrated platform for long non-coding RNA identification utilizing
 #' sequence intrinsic composition, structural information, and physicochemical property.
-#' \emph{Briefings in Bioinformatics}, 2018, bby065.
+#' \emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 #'
 #' @importFrom seqinr s2c
 #' @importFrom seqinr count
@@ -708,7 +708,7 @@ make_referFreq <- function(cds.seq, lncRNA.seq, k = 6, step = 1, alphabet = c("a
 #' Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 #' LncFinder: an integrated platform for long non-coding RNA identification utilizing
 #' sequence intrinsic composition, structural information, and physicochemical property.
-#' \emph{Briefings in Bioinformatics}, 2018, bby065.
+#' \emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 #'
 #' @importFrom seqinr s2c
 #' @importFrom seqinr count
@@ -839,7 +839,7 @@ compute_LogDistance <- function(Sequences, label = NULL, referFreq,
 #' Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 #' LncFinder: an integrated platform for long non-coding RNA identification utilizing
 #' sequence intrinsic composition, structural information, and physicochemical property.
-#' \emph{Briefings in Bioinformatics}, 2018, bby065.
+#' \emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 #'
 #' @importFrom seqinr s2c
 #' @importFrom seqinr count
@@ -973,7 +973,7 @@ compute_EucDistance <- function(Sequences, label = NULL, referFreq,
 #' Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 #' LncFinder: an integrated platform for long non-coding RNA identification utilizing
 #' sequence intrinsic composition, structural information, and physicochemical property.
-#' \emph{Briefings in Bioinformatics}, 2018, bby065.
+#' \emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 #'
 #' @importFrom seqinr s2c
 #' @importFrom seqinr count
@@ -1222,7 +1222,7 @@ compute_kmer <- function(Sequences, label = NULL, k = 1:5, step = 1, freq = TRUE
 #' Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 #' LncFinder: an integrated platform for long non-coding RNA identification utilizing
 #' sequence intrinsic composition, structural information, and physicochemical property.
-#' \emph{Briefings in Bioinformatics}, 2018, bby065.
+#' \emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 #'
 #' Liguo Wang, Hyun Jung Park, Surendra Dasari, Shengqin Wang, JeanPierre Kocher & Wei Li.
 #' CPAT: coding-potential assessment tool using an alignment-free logistic regression model.
@@ -1443,7 +1443,11 @@ compute_GC <- function(Sequences, label = NULL, on.ORF = FALSE,
 #' Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 #' LncFinder: an integrated platform for long non-coding RNA identification utilizing
 #' sequence intrinsic composition, structural information, and physicochemical property.
-#' \emph{Briefings in Bioinformatics}, 2018, bby065.
+#' \emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
+#'
+#' Lalović, Dragutin, and Veljko Veljković.
+#' The global average DNA base composition of coding regions may be determined by the electron-ion interaction potential.
+#' \emph{Biosystems}, 1990, 23(4):311-316.
 #'
 #' Achuthsankar S Nair & Sivarama Pillai Sreenadhan.
 #' A coding measure scheme employing electron-ion interaction pseudopotential (EIIP).
@@ -2239,7 +2243,7 @@ read_SS <- function(oneFile.loc, seqRNA.loc, seqSS.loc, separateFile = TRUE, wit
 #' Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 #' LncFinder: an integrated platform for long non-coding RNA identification utilizing
 #' sequence intrinsic composition, structural information, and physicochemical property.
-#' \emph{Briefings in Bioinformatics}, 2018, bby065.
+#' \emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 #'
 #' @seealso \code{\link{run_RNAfold}}, \code{\link{read_SS}},
 #'          \code{\link{build_model}}, \code{\link{extract_features}},
@@ -2475,7 +2479,7 @@ make_frequencies <- function(cds.seq, mRNA.seq, lncRNA.seq, SS.features = FALSE,
 #' Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 #' LncFinder: an integrated platform for long non-coding RNA identification utilizing
 #' sequence intrinsic composition, structural information, and physicochemical property.
-#' \emph{Briefings in Bioinformatics}, 2018, bby065.
+#' \emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 #'
 #' @importFrom seqinr s2c
 #' @importFrom seqinr count
@@ -2651,7 +2655,7 @@ extract_features <- function(Sequences, label = NULL, SS.features = FALSE, forma
 #' Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 #' LncFinder: an integrated platform for long non-coding RNA identification utilizing
 #' sequence intrinsic composition, structural information, and physicochemical property.
-#' \emph{Briefings in Bioinformatics}, 2018, bby065.
+#' \emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 #'
 #' @importFrom seqinr s2c
 #' @importFrom seqinr count
@@ -2778,7 +2782,7 @@ build_model <- function(lncRNA.seq, mRNA.seq, frequencies.file, SS.features = FA
 #' Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 #' LncFinder: an integrated platform for long non-coding RNA identification utilizing
 #' sequence intrinsic composition, structural information, and physicochemical property.
-#' \emph{Briefings in Bioinformatics}, 2018, bby065.
+#' \emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 #'
 #' @importFrom seqinr s2c
 #' @importFrom seqinr count

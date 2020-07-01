@@ -4,9 +4,18 @@
 \alias{compute_kmer}
 \title{Compute \emph{k}-mer Features}
 \usage{
-compute_kmer(Sequences, label = NULL, k = 1:5, step = 1,
-  freq = TRUE, improved.mode = FALSE, alphabet = c("a", "c", "g",
-  "t"), on.ORF = FALSE, auto.full = FALSE, parallel.cores = 2)
+compute_kmer(
+  Sequences,
+  label = NULL,
+  k = 1:5,
+  step = 1,
+  freq = TRUE,
+  improved.mode = FALSE,
+  alphabet = c("a", "c", "g", "t"),
+  on.ORF = FALSE,
+  auto.full = FALSE,
+  parallel.cores = 2
+)
 }
 \arguments{
 \item{Sequences}{A FASTA file loaded by function  \code{\link[seqinr]{read.fasta}} of

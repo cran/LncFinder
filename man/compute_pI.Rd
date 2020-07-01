@@ -4,8 +4,14 @@
 \alias{compute_pI}
 \title{Compute Theoretical Isoelectric Point}
 \usage{
-compute_pI(Sequences, label = NULL, on.ORF = FALSE,
-  auto.full = FALSE, ambiguous.base = FALSE, parallel.cores = 2)
+compute_pI(
+  Sequences,
+  label = NULL,
+  on.ORF = FALSE,
+  auto.full = FALSE,
+  ambiguous.base = FALSE,
+  parallel.cores = 2
+)
 }
 \arguments{
 \item{Sequences}{A FASTA file loaded by function  \code{\link[seqinr]{read.fasta}} of

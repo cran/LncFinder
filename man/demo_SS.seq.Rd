@@ -3,11 +3,13 @@
 \name{demo_SS.seq}
 \alias{demo_SS.seq}
 \title{A demo of secondary structure sequences}
-\format{A data frame with 3 rows and 10 variables:
+\format{
+A data frame with 3 rows and 10 variables:
 \describe{
 The first row is RNA sequence; the second row is Dot-Bracket Notation of
 secondary structure sequences; the last row is minimum free energy (MFE).
-}}
+}
+}
 \source{
 DNA sequences are selected from GENCODE. Secondary structure of each
 sequence is obtained from program "RNAfold".

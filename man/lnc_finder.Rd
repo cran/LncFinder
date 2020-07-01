@@ -4,9 +4,14 @@
 \alias{lnc_finder}
 \title{Long Non-coding RNA Identification}
 \usage{
-lnc_finder(Sequences, SS.features = FALSE, format = "DNA",
-  frequencies.file = "human", svm.model = "human",
-  parallel.cores = 2)
+lnc_finder(
+  Sequences,
+  SS.features = FALSE,
+  format = "DNA",
+  frequencies.file = "human",
+  svm.model = "human",
+  parallel.cores = 2
+)
 }
 \arguments{
 \item{Sequences}{Unevaluated sequences. Can be a FASTA file loaded by
@@ -70,7 +75,7 @@ For the details of the features, please refer to function
 Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 LncFinder: an integrated platform for long non-coding RNA identification utilizing
 sequence intrinsic composition, structural information, and physicochemical property.
-\emph{Briefings in Bioinformatics}, 2018, bby065.
+\emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 }
 
 \examples{

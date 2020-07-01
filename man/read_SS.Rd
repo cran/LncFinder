@@ -4,8 +4,13 @@
 \alias{read_SS}
 \title{Read Secondary Structure Information}
 \usage{
-read_SS(oneFile.loc, seqRNA.loc, seqSS.loc, separateFile = TRUE,
-  withMFE = TRUE)
+read_SS(
+  oneFile.loc,
+  seqRNA.loc,
+  seqSS.loc,
+  separateFile = TRUE,
+  withMFE = TRUE
+)
 }
 \arguments{
 \item{oneFile.loc}{String. The location of your sequence file. This file should contains

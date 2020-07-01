@@ -4,9 +4,15 @@
 \alias{make_referFreq}
 \title{Make Frequencies File for Log.Dist, Euc.Dist, and hexamer score}
 \usage{
-make_referFreq(cds.seq, lncRNA.seq, k = 6, step = 1,
-  alphabet = c("a", "c", "g", "t"), on.orf = TRUE,
-  ignore.illegal = TRUE)
+make_referFreq(
+  cds.seq,
+  lncRNA.seq,
+  k = 6,
+  step = 1,
+  alphabet = c("a", "c", "g", "t"),
+  on.orf = TRUE,
+  ignore.illegal = TRUE
+)
 }
 \arguments{
 \item{cds.seq}{Coding sequences (mRNA without UTRs). Can be a FASTA file loaded
@@ -63,7 +69,7 @@ If \code{on.orf = TRUE}, users can set \code{step = 3} to simulate the translati
 Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 LncFinder: an integrated platform for long non-coding RNA identification utilizing
 sequence intrinsic composition, structural information, and physicochemical property.
-\emph{Briefings in Bioinformatics}, 2018, bby065.
+\emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 }
 
 \examples{

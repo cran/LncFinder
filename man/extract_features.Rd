@@ -4,8 +4,14 @@
 \alias{extract_features}
 \title{Extract the Features}
 \usage{
-extract_features(Sequences, label = NULL, SS.features = FALSE,
-  format = "DNA", frequencies.file = "human", parallel.cores = 2)
+extract_features(
+  Sequences,
+  label = NULL,
+  SS.features = FALSE,
+  format = "DNA",
+  frequencies.file = "human",
+  parallel.cores = 2
+)
 }
 \arguments{
 \item{Sequences}{mRNA sequences or long non-coding sequences. Can be a FASTA
@@ -116,7 +122,7 @@ other species, \code{SS.features} as \code{TRUE} may lead to low accuracy.
 Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 LncFinder: an integrated platform for long non-coding RNA identification utilizing
 sequence intrinsic composition, structural information, and physicochemical property.
-\emph{Briefings in Bioinformatics}, 2018, bby065.
+\emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 }
 
 \examples{

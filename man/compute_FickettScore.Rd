@@ -4,8 +4,13 @@
 \alias{compute_FickettScore}
 \title{Compute Fickett TESTCODE Score}
 \usage{
-compute_FickettScore(Sequences, label = NULL, on.ORF = FALSE,
-  auto.full = FALSE, parallel.cores = 2)
+compute_FickettScore(
+  Sequences,
+  label = NULL,
+  on.ORF = FALSE,
+  auto.full = FALSE,
+  parallel.cores = 2
+)
 }
 \arguments{
 \item{Sequences}{A FASTA file loaded by function  \code{\link[seqinr]{read.fasta}} of
@@ -50,7 +55,7 @@ Recognition of protein coding regions in DNA sequences.
 Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 LncFinder: an integrated platform for long non-coding RNA identification utilizing
 sequence intrinsic composition, structural information, and physicochemical property.
-\emph{Briefings in Bioinformatics}, 2018, bby065.
+\emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 
 Liguo Wang, Hyun Jung Park, Surendra Dasari, Shengqin Wang, JeanPierre Kocher & Wei Li.
 CPAT: coding-potential assessment tool using an alignment-free logistic regression model.

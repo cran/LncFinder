@@ -4,9 +4,17 @@
 \alias{compute_hexamerScore}
 \title{Compute Hexamer Score}
 \usage{
-compute_hexamerScore(Sequences, label = NULL, referFreq, k = 6,
-  step = 1, alphabet = c("a", "c", "g", "t"), on.ORF = FALSE,
-  auto.full = FALSE, parallel.cores = 2)
+compute_hexamerScore(
+  Sequences,
+  label = NULL,
+  referFreq,
+  k = 6,
+  step = 1,
+  alphabet = c("a", "c", "g", "t"),
+  on.ORF = FALSE,
+  auto.full = FALSE,
+  parallel.cores = 2
+)
 }
 \arguments{
 \item{Sequences}{A FASTA file loaded by function  \code{\link[seqinr]{read.fasta}} of
@@ -62,7 +70,7 @@ CPAT: coding-potential assessment tool using an alignment-free logistic regressi
 Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 LncFinder: an integrated platform for long non-coding RNA identification utilizing
 sequence intrinsic composition, structural information, and physicochemical property.
-\emph{Briefings in Bioinformatics}, 2018, bby065.
+\emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 }
 
 \examples{

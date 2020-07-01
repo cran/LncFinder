@@ -4,10 +4,17 @@
 \alias{svm_tune}
 \title{Parameter Tuning of SVM}
 \usage{
-svm_tune(dataset, label.col = 1, positive.class = "NonCoding",
-  folds.num = 10, seed = 1, gamma.range = (2^seq(-5, 0, 1)),
-  cost.range = c(1, 4, 8, 16, 24, 32), return.model = TRUE,
-  parallel.cores = 2)
+svm_tune(
+  dataset,
+  label.col = 1,
+  positive.class = "NonCoding",
+  folds.num = 10,
+  seed = 1,
+  gamma.range = (2^seq(-5, 0, 1)),
+  cost.range = c(1, 4, 8, 16, 24, 32),
+  return.model = TRUE,
+  parallel.cores = 2
+)
 }
 \arguments{
 \item{dataset}{The dataset obtained from function \code{\link{extract_features}}.

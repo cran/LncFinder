@@ -4,9 +4,16 @@
 \alias{make_frequencies}
 \title{Make the frequencies file for new classifier construction}
 \usage{
-make_frequencies(cds.seq, mRNA.seq, lncRNA.seq, SS.features = FALSE,
-  cds.format = "DNA", lnc.format = "DNA", check.cds = TRUE,
-  ignore.illegal = TRUE)
+make_frequencies(
+  cds.seq,
+  mRNA.seq,
+  lncRNA.seq,
+  SS.features = FALSE,
+  cds.format = "DNA",
+  lnc.format = "DNA",
+  check.cds = TRUE,
+  ignore.illegal = TRUE
+)
 }
 \arguments{
 \item{cds.seq}{Coding sequences (mRNA without UTRs). Can be a FASTA file loaded
@@ -127,7 +134,7 @@ acgu-ACGU Sequence:\code{    \{     u, a, c, a, G, U, U, A, U, G   \}}
 Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 LncFinder: an integrated platform for long non-coding RNA identification utilizing
 sequence intrinsic composition, structural information, and physicochemical property.
-\emph{Briefings in Bioinformatics}, 2018, bby065.
+\emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 }
 
 \examples{

@@ -4,8 +4,15 @@
 \alias{svm_cv}
 \title{\emph{k}-fold Cross Validation for SVM}
 \usage{
-svm_cv(dataset, label.col = 1, positive.class = NULL, folds.num = 10,
-  seed = 1, parallel.cores = 2, ...)
+svm_cv(
+  dataset,
+  label.col = 1,
+  positive.class = NULL,
+  folds.num = 10,
+  seed = 1,
+  parallel.cores = 2,
+  ...
+)
 }
 \arguments{
 \item{dataset}{The dataset obtained from function \code{\link{extract_features}}.

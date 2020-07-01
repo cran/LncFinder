@@ -4,10 +4,19 @@
 \alias{build_model}
 \title{Build Users' Own Model}
 \usage{
-build_model(lncRNA.seq, mRNA.seq, frequencies.file, SS.features = FALSE,
-  lncRNA.format = "DNA", mRNA.format = "DNA", parallel.cores = 2,
-  folds.num = 10, seed = 1, gamma.range = (2^seq(-5, 0, 1)),
-  cost.range = c(1, 4, 8, 16, 24, 32))
+build_model(
+  lncRNA.seq,
+  mRNA.seq,
+  frequencies.file,
+  SS.features = FALSE,
+  lncRNA.format = "DNA",
+  mRNA.format = "DNA",
+  parallel.cores = 2,
+  folds.num = 10,
+  seed = 1,
+  gamma.range = (2^seq(-5, 0, 1)),
+  cost.range = c(1, 4, 8, 16, 24, 32)
+)
 }
 \arguments{
 \item{lncRNA.seq}{Long non-coding sequences. Can be a FASTA file loaded by
@@ -84,7 +93,7 @@ For the details of svm tuning, please refer to function \code{\link{svm_tune}}.
 Siyu Han, Yanchun Liang, Qin Ma, Yangyi Xu, Yu Zhang, Wei Du, Cankun Wang & Ying Li.
 LncFinder: an integrated platform for long non-coding RNA identification utilizing
 sequence intrinsic composition, structural information, and physicochemical property.
-\emph{Briefings in Bioinformatics}, 2018, bby065.
+\emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 }
 
 \examples{

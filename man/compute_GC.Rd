@@ -4,8 +4,13 @@
 \alias{compute_GC}
 \title{Calculate GC content}
 \usage{
-compute_GC(Sequences, label = NULL, on.ORF = FALSE,
-  auto.full = FALSE, parallel.cores = 2)
+compute_GC(
+  Sequences,
+  label = NULL,
+  on.ORF = FALSE,
+  auto.full = FALSE,
+  parallel.cores = 2
+)
 }
 \arguments{
 \item{Sequences}{A FASTA file loaded by function  \code{\link[seqinr]{read.fasta}} of

@@ -3,10 +3,12 @@
 \name{demo_DNA.seq}
 \alias{demo_DNA.seq}
 \title{A demo of DNA sequences}
-\format{A list contains 10 DNA sequences.
+\format{
+A list contains 10 DNA sequences.
 \describe{
 The sequences are loaded by function \code{\link[seqinr]{read.fasta}}.
-}}
+}
+}
 \source{
 DNA sequences are selected from GENCODE.
 }
