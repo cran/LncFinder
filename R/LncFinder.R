@@ -1706,7 +1706,10 @@ svm_cv <- function(dataset, label.col = 1, positive.class = NULL,
 #' than the \code{folds.num} (number of the folds for cross-validation), the
 #' number of \code{parallel.cores} will be set as \code{folds.num} automatically.
 #'
-#' @return Returns the optimal parameters when \code{return.model = FALSE}.#'
+#' @param ... Additional arguments for function \code{\link[e1071]{svm}}, except
+#' \code{scale}, \code{probability}, \code{kernel}, \code{gamma} and \code{cost}.
+#'
+#' @return Returns the optimal parameters when \code{return.model = FALSE}.
 #' Or returns the best model when \code{return.model = TRUE}.
 #'
 #' @author HAN Siyu
@@ -1766,9 +1769,10 @@ svm_tune <- function(dataset, label.col = 1, positive.class = "NonCoding",
                      folds.num = 10, seed = 1,
                      gamma.range = (2 ^ seq(-5, 0, 1)),
                      cost.range = c(1, 4, 8, 16, 24, 32),
-                     return.model = TRUE, parallel.cores = 2){
+                     return.model = TRUE, parallel.cores = 2, ...){
 
         names(dataset)[[label.col]] <- "label"
+        dataset$label <- as.factor(dataset$label)
 
         set.seed(seed)
         folds <- caret::createFolds(dataset$label, k = folds.num, returnTrain = TRUE)
@@ -1786,15 +1790,16 @@ svm_tune <- function(dataset, label.col = 1, positive.class = "NonCoding",
         message("+ SVM.tune processing.")
         for(g in gamma.range){
                 for(C in cost.range){
-                        parallel::clusterExport(cl, varlist = c("g", "C", "dataset", "positive.class"),
-                                                envir = environment())
+                        # parallel::clusterExport(cl, varlist = c("g", "C", "dataset", "positive.class"),
+                        #                         envir = environment())
                         message("- gamma = ", g, ", Cost = ", C)
-                        perf.res    <- parallel::parSapply(cl, folds, function(x, gamma = g, cost = C,
-                                                                               positive.label = positive.class) {
+                        perf.res    <- parallel::parSapply(cl, folds, function(x, gamma, cost,
+                                                                               positive.label, ...) {
                                 subset <- dataset[x, ]
                                 test.set  <- dataset[-x, ]
                                 svm.mod <- e1071::svm(label ~ ., data = subset, scale = TRUE, probability = TRUE,
-                                                      kernel = "radial", gamma = gamma, cost = cost)
+                                                      kernel = "radial", gamma = gamma, cost = cost,
+                                                      ... = ...)
 
                                 res <- stats::predict(svm.mod, test.set, probability = TRUE)
 
@@ -1807,7 +1812,10 @@ svm_tune <- function(dataset, label.col = 1, positive.class = "NonCoding",
                                                               Kappa       = confusion.res$overall[2])
 
                                 performance.res
-                        })
+                        },
+                        gamma = g, cost = C,
+                        positive.label = positive.class, ... = ...)
+
                         Ave.res     <- apply(perf.res, 1, as.numeric)
                         Ave.res     <- as.data.frame(t(Ave.res))
                         Ave.res$Ave.Res <- rowMeans(Ave.res)
@@ -2635,6 +2643,8 @@ extract_features <- function(Sequences, label = NULL, SS.features = FALSE, forma
 #'
 #' @param cost.range The range of cost. (Default: \code{c(1, 4, 8, 16, 24, 32)})
 #'
+#' @param ... Additional arguments passed to function \code{\link{svm_tune}} for customised SVM model training.
+#'
 #' @return Returns a svm model.
 #'
 #' @author HAN Siyu
@@ -2694,7 +2704,7 @@ extract_features <- function(Sequences, label = NULL, SS.features = FALSE, forma
 build_model <- function(lncRNA.seq, mRNA.seq, frequencies.file, SS.features = FALSE,
                         lncRNA.format = "DNA", mRNA.format = "DNA", parallel.cores = 2,
                         folds.num = 10, seed = 1, gamma.range = (2 ^ seq(-5, 0, 1)),
-                        cost.range = c(1, 4, 8, 16, 24, 32)) {
+                        cost.range = c(1, 4, 8, 16, 24, 32), ...) {
 
         message("+ Extract features of non-coding sequences.")
         lnc.data <- extract_features(lncRNA.seq, label = "NonCoding", SS.features = SS.features,
@@ -2707,10 +2717,11 @@ build_model <- function(lncRNA.seq, mRNA.seq, frequencies.file, SS.features = FA
                                      parallel.cores = parallel.cores)
 
         dataset <- rbind(lnc.data, pct.data)
+        dataset$label <- as.factor(dataset$label)
 
         svm.mod <- svm_tune(dataset, gamma.range = gamma.range, cost.range = cost.range,
                             seed = seed, folds.num = folds.num, return.model = TRUE,
-                            parallel.cores = parallel.cores)
+                            parallel.cores = parallel.cores, ... = ...)
 
         # message("+ Build the model with the whole dataset.")
         # svm.mod  <- e1071::svm(label ~ ., data = dataset, scale = TRUE, probability = TRUE, kernel = "radial",

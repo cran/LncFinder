@@ -11,7 +11,7 @@ citEntry(entry="Article",
          pages = "2009-2027",
          doi = "10.1093/bib/bby065",
          url = "https://academic.oup.com/bib/article/20/6/2009/5062950",
-         web_server = "http://bmbl.sdstate.edu/lncfinder/",
+         web_server = "https://bmbl.bmi.osumc.edu/lncfinder/",
          eprint = "https://academic.oup.com/bib/article-pdf/20/6/2009/31789323/bby065.pdf",
          textVersion = "Han, S., Liang, Y., Ma, Q., Xu, Y., Zhang, Y., Du, W., Wang, C. & Li, Y. LncFinder: an integrated platform for long non-coding RNA identification utilizing sequence intrinsic composition, structural information and physicochemical property, Briefings in Bioinformatics, 2019, 20(6):2009-2027."
          )

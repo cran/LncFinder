@@ -13,7 +13,8 @@ svm_tune(
   gamma.range = (2^seq(-5, 0, 1)),
   cost.range = c(1, 4, 8, 16, 24, 32),
   return.model = TRUE,
-  parallel.cores = 2
+  parallel.cores = 2,
+  ...
 )
 }
 \arguments{
@@ -44,9 +45,12 @@ By default the number of cores is \code{2}, users can set as \code{-1} to run
 this function with all cores. If the number of \code{parallel.cores} is more
 than the \code{folds.num} (number of the folds for cross-validation), the
 number of \code{parallel.cores} will be set as \code{folds.num} automatically.}
+
+\item{...}{Additional arguments for function \code{\link[e1071]{svm}}, except
+\code{scale}, \code{probability}, \code{kernel}, \code{gamma} and \code{cost}.}
 }
 \value{
-Returns the optimal parameters when \code{return.model = FALSE}.#'
+Returns the optimal parameters when \code{return.model = FALSE}.
 Or returns the best model when \code{return.model = TRUE}.
 }
 \description{

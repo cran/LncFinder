@@ -1,15 +1,15 @@
-def27b2e04a8c95444663179f5f36c2e *DESCRIPTION
+ca4c4d4ca13489bc7ca4ff3858f5f37f *DESCRIPTION
 7935190a6603bd49c449091786715adf *NAMESPACE
-906be08109e1b1a612790a29f8317c2f *NEWS.md
-03fb21cd263e5e29e796f25c16ce750b *R/LncFinder.R
+8acac2b39677d6106dded5cdf2c44c59 *NEWS.md
+5e07ebeed7ef2a82716c7731fc8c9c6d *R/LncFinder.R
 50c96e4183a186d6f9c1817ebe4be8b9 *R/data.R
 21c8d10e6eca1630252f87547db46f92 *R/sysdata.rda
-addce3c177ccd78e52cd96b735972437 *README.md
+42907f739184fa96f75bded92f4d6246 *README.md
 6e662636d07aa4ae281771fbc411738f *data/demo_DNA.seq.rda
 3841675653cbb6833275f857829244f8 *data/demo_SS.seq.rda
 2f64db2b37675ad1a6d96e53f74f6fc1 *data/demo_dataset.rda
-49d4ec0204b5513d16f22f3d6edae424 *inst/CITATION
-ee025692ad0114b65c5da08fcc5f4f2c *man/build_model.Rd
+d5c71bb937621134247a85740412c659 *inst/CITATION
+7331c92d273ca189b2c4884ccea5c806 *man/build_model.Rd
 05412d9d99c42a30621299e2168b266d *man/compute_EIIP.Rd
 7c01e18e3c70ff53297f2c054467038c *man/compute_EucDistance.Rd
 7bc3664982beaae088236318ebd09b15 *man/compute_FickettScore.Rd
@@ -29,4 +29,4 @@ c7c4305ebd7fb64d9a8b7636a8dd85b8 *man/make_referFreq.Rd
 5c6dbd3ae41da7e62b9cb133b5559f33 *man/read_SS.Rd
 1c3f91a39bc7679ac0b09bcdfebe0de4 *man/run_RNAfold.Rd
 0de9d71cc982db7ac22bc702991f05b7 *man/svm_cv.Rd
-ac1c3cb2dbf8ee52829042ab02b1d47e *man/svm_tune.Rd
+c790ece3b5f6f506fdf74f1f9d75bcc8 *man/svm_tune.Rd

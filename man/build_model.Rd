@@ -15,7 +15,8 @@ build_model(
   folds.num = 10,
   seed = 1,
   gamma.range = (2^seq(-5, 0, 1)),
-  cost.range = c(1, 4, 8, 16, 24, 32)
+  cost.range = c(1, 4, 8, 16, 24, 32),
+  ...
 )
 }
 \arguments{
@@ -68,6 +69,8 @@ for cross-validation), the number of \code{parallel.cores} will be set as
 \item{gamma.range}{The range of gamma. (Default: \code{2 ^ seq(-5, 0, 1)})}
 
 \item{cost.range}{The range of cost. (Default: \code{c(1, 4, 8, 16, 24, 32)})}
+
+\item{...}{Additional arguments passed to function \code{\link{svm_tune}} for customised SVM model training.}
 }
 \value{
 Returns a svm model.
