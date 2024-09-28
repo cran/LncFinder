@@ -1,3 +1,9 @@
+### V 1.1.6 Released
+
+* Fix bugs that features cannot be extracted when all input sequences have the same length.
+
+Thanks to Sen Wang @Northwest A&F University for reporting this.
+
 ### V1.1.5 Released
 
 * Fix issue "Need numeric dependent variable for regression" when building customised models.

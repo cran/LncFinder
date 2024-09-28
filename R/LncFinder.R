@@ -1445,13 +1445,11 @@ compute_GC <- function(Sequences, label = NULL, on.ORF = FALSE,
 #' sequence intrinsic composition, structural information, and physicochemical property.
 #' \emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 #'
+#' \strong{Please cite the following paper, which originally proposed EIIP:}
+#'
 #' Lalović, Dragutin, and Veljko Veljković.
 #' The global average DNA base composition of coding regions may be determined by the electron-ion interaction potential.
 #' \emph{Biosystems}, 1990, 23(4):311-316.
-#'
-#' Achuthsankar S Nair & Sivarama Pillai Sreenadhan.
-#' A coding measure scheme employing electron-ion interaction pseudopotential (EIIP).
-#' \emph{Bioinformation}, 2006, 1(6):197-202.
 #'
 #' @examples
 #' data(demo_DNA.seq)
@@ -2300,23 +2298,23 @@ make_frequencies <- function(cds.seq, mRNA.seq, lncRNA.seq, SS.features = FALSE,
         if(lnc.format == "DNA") {
                 lnc.DNA <- lncRNA.seq
         } else if(lnc.format == "SS") {
-                lnc.DNA <- sapply(lncRNA.seq, get.Seq_DNA)
+                lnc.DNA <- lapply(lncRNA.seq, get.Seq_DNA)
         } else stop("- Error: Wrong format name of lncRNA.")
 
         if(cds.format == "DNA") {
                 cds.DNA <- cds.seq
         } else if(cds.format == "SS") {
-                cds.DNA <- sapply(cds.seq, get.Seq_DNA)
+                cds.DNA <- lapply(cds.seq, get.Seq_DNA)
         } else stop("- Error: Wrong format name of CDs.")
 
 
         if(SS.features) {
                 message("+ Calculating frequencies of Secondary structure:")
                 message("- Processing sequences.")
-                lnc.acguD <- sapply(lncRNA.seq, get.Seq_acguD)
-                pct.acguD <- sapply(mRNA.seq,   get.Seq_acguD)
-                lnc.SS    <- sapply(lncRNA.seq, get.Seq_acguACGU)
-                pct.SS    <- sapply(mRNA.seq,   get.Seq_acguACGU)
+                lnc.acguD <- lapply(lncRNA.seq, get.Seq_acguD)
+                pct.acguD <- lapply(mRNA.seq,   get.Seq_acguD)
+                lnc.SS    <- lapply(lncRNA.seq, get.Seq_acguACGU)
+                pct.SS    <- lapply(mRNA.seq,   get.Seq_acguACGU)
 
                 message("- Calculating frequencies of acguD k = 4", "\n")
 
@@ -2524,10 +2522,10 @@ extract_features <- function(Sequences, label = NULL, SS.features = FALSE, forma
         if(format == "DNA") {
                 DNA.seq <- Sequences
         } else if(format == "SS") {
-                DNA.seq   <- sapply(Sequences, get.Seq_DNA)
+                DNA.seq   <- lapply(Sequences, get.Seq_DNA)
         } else stop("- Error: Wrong format name.")
 
-        if(class(frequencies.file) == "character") {
+        if(is.character(frequencies.file)) {   # class(frequencies.file) == "character"
                 if(frequencies.file == "human") {
                         Internal.data = Internal.human
                 } else if(frequencies.file == "mouse") {
@@ -2546,9 +2544,9 @@ extract_features <- function(Sequences, label = NULL, SS.features = FALSE, forma
         if(SS.features) {
                 message("+ Extracting secondary structure features:")
                 message("- Processing sequences.")
-                UP.seq    <- sapply(Sequences, get.Seq_UP)
-                SS.seq    <- sapply(Sequences, get.Seq_acguACGU)
-                acguD.seq <- sapply(Sequences, get.Seq_acguD)
+                UP.seq    <- lapply(Sequences, get.Seq_UP)
+                SS.seq    <- lapply(Sequences, get.Seq_acguACGU)
+                acguD.seq <- lapply(Sequences, get.Seq_acguD)
 
                 message("- LogDist.acguD k = 4")
                 acguD    <- parallel::parSapply(cl, acguD.seq, LogDist.acguD,
@@ -2695,7 +2693,7 @@ extract_features <- function(Sequences, label = NULL, SS.features = FALSE, forma
 #'                         cost.range = c(2, 6, 12, 20))
 #'
 #' ### Users can use default values of gamma.range and cost.range to find the
-#' best parameters.
+#' ### best parameters.
 #' ### Use your own frequencies file by assigning frequencies list to parameter
 #' ### "frequencies.file".
 #' }
@@ -2841,7 +2839,7 @@ build_model <- function(lncRNA.seq, mRNA.seq, frequencies.file, SS.features = FA
 lnc_finder <- function(Sequences, SS.features = FALSE, format = "DNA", frequencies.file = "human",
                        svm.model = "human", parallel.cores = 2) {
 
-        if(class(svm.model)[1] == "character") {
+        if(is.character(svm.model)) {  # class(svm.model)[1] == "character"
                 if(SS.features) {
                         if(svm.model == "human") {
                                 svm.mod <- human.mod

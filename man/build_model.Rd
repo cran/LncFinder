@@ -113,7 +113,7 @@ my_model <- build_model(lncRNA.seq = Seqs[1:5], mRNA.seq = Seqs[6:10],
                         cost.range = c(2, 6, 12, 20))
 
 ### Users can use default values of gamma.range and cost.range to find the
-best parameters.
+### best parameters.
 ### Use your own frequencies file by assigning frequencies list to parameter
 ### "frequencies.file".
 }

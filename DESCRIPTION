@@ -1,27 +1,27 @@
 Package: LncFinder
 Type: Package
 Title: LncRNA Identification and Analysis Using Heterologous Features
-Version: 1.1.5
+Version: 1.1.6
 Authors@R: c(
-    person(family = "HAN", given = "Siyu", email = "hansy15@mails.jlu.edu.cn", role = c("aut", "cre")),
-    person(family = "LI", given = "Ying", email = "liying@jlu.edu.cn", role = "aut"),
-    person(family = "LIANG", given = "Yanchun", role = "aut"))
-Maintainer: Siyu HAN <hansy15@mails.jlu.edu.cn>
+    person(family = "Han", given = "Siyu", email = "siyu.han@tum.de", role = c("aut", "cre")),
+    person(family = "Li", given = "Ying", email = "liying@jlu.edu.cn", role = "aut"),
+    person(family = "Liang", given = "Yanchun", role = "aut"))
+Maintainer: Siyu Han <siyu.han@tum.de>
 Acknowledgments: CHENG Ming, FAN Linrui, GUO Yuan, LI Yaolong, SUN
         Ying, WANG Ruoyu
-Description: Long non-coding RNAs identification and analysis. Default models are trained with human, mouse and wheat datasets by employing SVM. Features are based on intrinsic composition of sequence, EIIP value (electron-ion interaction pseudopotential), and secondary structure. This package can also extract other classic features and build new classifiers. Reference: Han SY., Liang YC., Li Y., et al. (2018) <doi:10.1093/bib/bby065>.
-URL: https://bmbl.bmi.osumc.edu/lncfinder/
+Description: Long non-coding RNAs identification and analysis. Default models are trained with human, mouse and wheat datasets by employing SVM. Features are based on intrinsic composition of sequence, EIIP value (electron-ion interaction pseudopotential), and secondary structure. This package can also extract other classic features and build new classifiers. Reference: Han S., et al. (2019) <doi:10.1093/bib/bby065>.
+URL: https://lncfinder.osubmi.org/
 License: GPL-3
 Depends: R (>= 2.10)
 Imports: seqinr (>= 2.1-3), e1071 (>= 1.0), parallel (>= 2.1.0), caret
         (>= 6.0-71),
 LazyData: true
 Encoding: UTF-8
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2021-12-09 16:11:28 UTC; siyu.han
-Author: Siyu HAN [aut, cre],
-  Ying LI [aut],
-  Yanchun LIANG [aut]
+Author: Siyu Han [aut, cre],
+  Ying Li [aut],
+  Yanchun Liang [aut]
+Packaged: 2024-09-28 20:03:52 UTC; alexh
 Repository: CRAN
-Date/Publication: 2021-12-09 17:00:02 UTC
+Date/Publication: 2024-09-28 23:00:02 UTC

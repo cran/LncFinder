@@ -48,13 +48,11 @@ LncFinder: an integrated platform for long non-coding RNA identification utilizi
 sequence intrinsic composition, structural information, and physicochemical property.
 \emph{Briefings in Bioinformatics}, 2019, 20(6):2009-2027.
 
+\strong{Please cite the following paper, which originally proposed EIIP:}
+
 Lalović, Dragutin, and Veljko Veljković.
 The global average DNA base composition of coding regions may be determined by the electron-ion interaction potential.
 \emph{Biosystems}, 1990, 23(4):311-316.
-
-Achuthsankar S Nair & Sivarama Pillai Sreenadhan.
-A coding measure scheme employing electron-ion interaction pseudopotential (EIIP).
-\emph{Bioinformation}, 2006, 1(6):197-202.
 }
 
 \examples{

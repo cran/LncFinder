@@ -11,4 +11,4 @@ https://bmbl.bmi.osumc.edu/lncfinder/
 ### Reference:  
 LncFinder: an integrated package for long non-coding RNA identification utilizing sequence intrinsic composition, structural information and physicochemical property, Briefings in Bioinformatics, 2019, 20(6):2009-2027. (doi: "https://doi.org/10.1093/bib/bby065")
 
-The authors would be glad to hear how LncFinder is employed. You are kindly encouraged to notify Siyu HAN &lt;hansy15@mails.jlu.edu.cn&gt; about any work you publish.
+The authors would be glad to hear how LncFinder is employed. You are kindly encouraged to notify Siyu HAN &lt;siyu.han@tum.de&gt; about any work you publish.
